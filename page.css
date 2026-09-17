@@ -1,0 +1,17 @@
+body{
+    background-color: black;
+}
+h1{
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    display: flex;
+    font-family: 'Inter', sans-serif;
+}
+.building{
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    display: flex;
+    margin: auto;
+}

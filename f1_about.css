@@ -1,0 +1,250 @@
+/* Global styles */
+:root {
+  --black:      #0A0A0C;
+  --panel:      #101014;
+  --coral:      #E68A78;
+  --violet:     #7B72D6;
+  --magenta:    #D94F86;
+  --teal:       #3FCBB0;
+  --teal-light: #8FE0CE;
+  --mauve:      #C9909A;
+  --paper:      #F3EFE8;
+  --hair:       rgba(243,239,232,0.14);
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+html,body {
+  background: var(--black);
+  color: var(--paper);
+  font-family:'Manrope', sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height:100%;
+  display:flex;
+  justify-content:center;
+  padding: 32px 16px;
+  width: 100%;
+}
+
+
+.page {
+  width:100%;
+  max-width:100%;
+  background:var(--panel);
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow: 0 40px 90px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.04);
+  position:relative;
+}
+
+/* ---------- Главная ---------- */
+.hero{
+  position:relative;
+  height:150px;
+  overflow:hidden;
+  background:
+    radial-gradient(120% 140% at 78% 20%, rgba(216,55,45,0.55), transparent 55%),
+    linear-gradient(100deg, #050506 0%, #16171b 42%, #0b0c0f 100%);
+}
+.hero .speedlines{
+  position:absolute; inset:0;
+  background: repeating-linear-gradient(
+    100deg,
+    rgba(255,255,255,0.05) 0px,
+    rgba(255,255,255,0.05) 2px,
+    transparent 2px,
+    transparent 22px
+  );
+  mix-blend-mode:screen;
+  opacity:0.5;
+  transform: translateX(-10%);
+}
+
+.hero .wordmark{
+  font-family:'Bebas Neue', sans-serif;
+  font-size:30px;
+  letter-spacing:2px;
+  color:var(--paper);
+  line-height:0.85;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.hero .wordmark span{
+  display:block;
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:13px;
+  letter-spacing:0.4px;
+  color:rgba(243,239,232,0.65);
+  margin-top:2px;
+}
+
+/*  Коллаж 1 */
+.collage{
+  position:relative;
+  width:100%;
+  aspect-ratio: 436 / 330;
+  padding: 0 20px;
+}
+.pill{
+  position:absolute;
+  border-radius:999px;
+  overflow:hidden;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.45);
+}
+
+
+.p1{ top:6%; left:2%; width:44%; height:26%;}
+
+.p2{ top:29%; left:33%; width:380px; height:28%;}
+
+.p3{ top:55%; left:2%; width: 985px;; height:30%;}
+ 
+
+.txt{ position:absolute; }
+.t1{ top:9%; right:4%; width:52%; text-align:left; }
+.t1 .a{ font-family:'Fraunces', serif; font-style:italic; font-weight:500; font-size:45px; color:var(--paper); }
+.t1 .b{ font-family:'Manrope', sans-serif; font-weight:800; font-size:50px; color:var(--coral); display:block; margin-top:-4px; }
+
+.t2{ top:33%; right:3%; width:44%; }
+.t2 .a{ font-family:'Manrope', sans-serif; font-weight:800; font-size:35px; color:var(--violet); display:block; }
+.t2 .b{ font-family:'Fraunces', serif; font-style:italic; font-weight:500; font-size:40px; color:var(--magenta); box-shadow: #050506;}
+
+.t3{ top:64%; left:56%; width:42%; }
+.t3 .a{ font-family:'Manrope', sans-serif; font-weight:800; font-size:45px; color:var(--teal); }
+.t3 .b{ font-family:'Fraunces', serif; font-style:italic; font-weight:500; font-size:50px; color:var(--teal-light); margin-left:6px; }
+
+.caption{
+  position:absolute; bottom:2%; left:0; right:0;
+  text-align:center;
+  font-family:'Fraunces', serif; font-style:italic; font-weight:500;
+  font-size:px; color:rgba(243,239,232,0.55);
+}
+
+.hairline{ height:1px; background:var(--hair); margin:0 20px; }
+
+/*  Коллаж 2 */
+.seasons-head{ padding:26px 20px 4px; }
+.seasons-head h2{
+  font-family:'Manrope', sans-serif; font-weight:800; font-size:  85px; line-height:1.06;
+  color:var(--mauve);
+}
+.seasons-head h2 em{
+  font-family:'Fraunces', serif; font-style:italic; font-weight:500; color:var(--coral);
+}
+
+.collage2{
+  position:relative;
+  width:100%;
+  aspect-ratio: 436 / 260;
+  margin-top:14px;
+}
+.car{
+  position:absolute; left: -25%; bottom:6%; width:46%; height:50%;
+  border-radius: 18px 60px 60px 18px;
+  overflow:hidden;
+  transition: transform 0.4s ease;
+  transform: translateX(0);
+
+}
+.car:hover{
+  transform: translateX(100px);
+}
+
+.season{
+  position: absolute;
+  border-radius:34px;
+  display:flex; align-items:flex-end;
+  justify-content:center;
+  padding: 0;
+  box-shadow: 0 16px 30px rgba(0,0,0,0.5);
+  cursor:pointer;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s;
+  overflow:hidden;
+  border:none;
+}
+.season::before{
+  content:"";
+  position:absolute;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.65) 100%);
+  z-index: 1;
+  inset: 0;
+
+}
+
+.season img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     
+  display: block;
+}
+
+.season span{
+  position:relative;
+  font-family:'Bebas Neue', sans-serif;
+  letter-spacing:1px;
+  color:var(--paper);
+  z-index: 2;
+}
+.season:hover, .season:focus-visible{ transform: translateY(-4px); box-shadow:0 22px 40px rgba(0,0,0,0.6); }
+.season.active{ outline:2px solid var(--paper); outline-offset:3px; }
+
+/* Сезоны */
+
+.s2026{
+  top:2%;
+  right:4%;
+  width:36%;
+  height:50%;
+  background: url('kimi.webp');
+}
+
+
+.s2026 span{
+  font-size:22px;}
+
+.s2023{ top:38%; left:38%; width: 500px;; height: 38%;
+  background: radial-gradient(120% 120% at 70% 20%, rgba(230,140,80,0.45), transparent 60%), linear-gradient(150deg,#241a12,#0c0805); }
+.s2023 span{ font-size:34px; }
+
+.s2021{ top:52%; right:0%; width:26%; height:38%;
+  background: radial-gradient(130% 130% at 30% 20%, rgba(60,205,175,0.4), transparent 60%), linear-gradient(150deg,#0f1e1c,#050a09); }
+.s2021 span{ font-size:20px; }
+
+/* ---------- Footer ---------- */
+.footer{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 20px 22px;
+  color: #F3EFE8;
+}
+.back-link{
+  font-family:'Manrope', sans-serif; font-weight:700; font-size:15px;
+  color:var(--paper); text-decoration:underline; text-underline-offset:4px;
+  background:none; border:none; cursor:pointer; padding:0;
+}
+.choose{
+  font-family:'Manrope', sans-serif; font-weight:500; font-size:13px;
+  color:rgba(243,239,232,0.55);
+}
+
+/* Media запросы */
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+@media (max-width:380px){
+  .t1 .a, .t1 .b{ font-size:22px; }
+  .seasons-head h2{ font-size:25px; }
+}
+

@@ -1,0 +1,260 @@
+/* Глобальный лист стилей */
+:root {
+  --black:      #0A0A0C;
+  --panel:      #131317;
+  --coral:      #E68A78;
+  --violet:     #7B72D6;
+  --magenta:    #D94F86;
+  --teal:       #3FCBB0;
+  --paper:      #F3EFE8;
+  --hair:       rgba(243,239,232,0.14);
+  --muted:      rgba(243,239,232,0.55);
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+html,body {
+  background: var(--black); 
+  color: var(--paper);
+  font-family:'Manrope', sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+a {
+  color:inherit; 
+  text-decoration:none;
+}
+
+.container {
+  max-width:1160px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+/* ---------- Навигация ---------- */
+.nav {
+  padding:20px 24px;
+  max-width:1160px;
+  margin:0 auto;
+}
+.back-link {
+  font-family:'Manrope', sans-serif; font-weight:700; font-size:14px;
+  color:var(--paper); opacity:0.8;
+}
+.back-link:hover {
+  opacity:1;
+}
+
+/* ---------- Header ---------- */
+.hero2026 {
+  text-align:center;
+  padding:24px 24px 32px;
+}
+.eyebrow {
+  font-family:'Manrope', sans-serif; font-weight:700; font-size:12px;
+  letter-spacing:4px; color:var(--muted); margin-bottom:10px;
+}
+.wordmark {
+  font-family:'Bebas Neue', sans-serif;
+  font-size:56px; letter-spacing:2px;
+  color:var(--paper);
+}
+.wordmark span { color:var(--coral); }
+.hairline {
+  height:1px; background:var(--hair);
+  max-width:1160px; margin:0 auto;
+}
+.hairline.narrow {
+  max-width:400px; margin:28px auto 0;
+}
+
+/* ---------- Главыный текст ---------- */
+.section-title {
+  font-family:'Manrope', sans-serif; font-weight:800; font-size:26px;
+  text-align:center; padding:36px 24px 24px;
+}
+.races-section { padding-bottom:8px; }
+.empty-note {
+  text-align:center; color:var(--muted); font-size:14px;
+  padding:0 24px 48px;
+}
+
+/* ---------- Карусель ---------- */
+.carousel-wrap {
+  position:relative;
+}
+.carousel {
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding:4px calc(50% - 150px) 24px 24px;
+  scrollbar-width:none;
+}
+.carousel::-webkit-scrollbar{ display:none; }
+
+.poster {
+  position:relative;
+  flex:0 0 auto;
+  width:300px;
+  aspect-ratio:3/4;
+  border-radius:22px;
+  overflow:hidden;
+  scroll-snap-align:start;
+  box-shadow:0 20px 40px rgba(0,0,0,0.5);
+}
+.poster img{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+}
+.poster-fade{
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,0.75) 100%);
+  z-index:1;
+}
+.poster-text{
+  position:absolute; left:18px; right:18px; bottom:18px;
+  z-index:2;
+  display:flex; flex-direction:column; gap:2px;
+}
+.poster-kicker{
+  font-family:'Manrope', sans-serif; font-weight:700; font-size:11px;
+  letter-spacing:2px; color:rgba(243,239,232,0.75);
+}
+.poster-title{
+  font-family:'Manrope', sans-serif; font-weight:800; font-size:22px; line-height:1.1;
+  color:var(--paper);
+}
+.poster-title--big{
+  font-family:'Bebas Neue', sans-serif; font-size:38px; letter-spacing:1px;
+}
+.poster-date{
+  font-family:'Manrope', sans-serif; font-weight:600; font-size:12px;
+  color:rgba(243,239,232,0.7); margin-top:4px;
+}
+
+/* цветовые заглушки */
+.p-monaco  img{ background:linear-gradient(150deg,#0e2a3a,#040d13); }
+.p-monza   img{ background:linear-gradient(150deg,#1a1a4a,#050512); }
+.p-belgium img{ background:linear-gradient(150deg,#0c2318,#040c08); }
+.p-britain img{ background:linear-gradient(150deg,#241016,#0a0407); }
+.p-spain   img{ background:linear-gradient(150deg,#2a1a08,#0a0603); }
+
+.carousel-arrow{
+  position:absolute;
+  top:50%;
+  right:16px;
+  transform:translateY(-50%);
+  width:48px; height:48px;
+  border-radius:50%;
+  border:none;
+  background:rgba(20,20,24,0.9);
+  color:var(--paper);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer;
+  opacity:0.85;                 
+  transition:opacity .25s, transform .25s;
+  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+.carousel-arrow:hover{ opacity:1; transform:translateY(-50%) scale(1.05); }
+.carousel-arrow:disabled{ opacity:0.3; cursor:default; }
+
+/* ---------- Гонки ---------- */
+.recordings-section{ padding-bottom:16px; }
+
+.track-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:36px 24px;
+  max-width:900px;
+  margin:0 auto;
+  padding:32px 24px;
+}
+.track-card{
+  display:flex; flex-direction:column; align-items:center;
+  gap:14px;
+  text-align:center;
+}
+.track-icon{
+  width:110px; height:82px;
+}
+.track-icon path{
+  stroke:rgba(243,239,232,0.85);
+  stroke-width:3;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  transition:stroke .25s, filter .25s;
+}
+.track-card:hover .track-icon path{
+  stroke:var(--coral);
+  filter:drop-shadow(0 0 6px rgba(230,138,120,0.6));
+}
+.track-label{
+  font-family:'Manrope', sans-serif; font-weight:700; font-size:14px;
+  padding-bottom:6px;
+  border-bottom:1px solid var(--hair);
+}
+
+/* ---------- Финальная гонка ---------- */
+.final-race{
+  display:flex; flex-direction:column; align-items:center;
+  padding:40px 24px 8px;
+  text-align:center;
+}
+.final-kicker{
+  font-family:'Manrope', sans-serif; font-weight:700; font-size:12px;
+  letter-spacing:4px; color:var(--muted);
+}
+.final-title{
+  font-family:'Manrope', sans-serif; font-weight:800; font-size:30px;
+  margin-top:4px;
+  color: red;
+}
+.track-card--final{
+  margin-top:18px;
+}
+.track-icon--final{
+  width:170px; height:118px;
+}
+.track-icon--final path{
+  stroke:var(--paper);
+  stroke-width:3.4;
+  filter:drop-shadow(0 0 10px rgba(217,79,134,0.55));
+}
+.final-underline{
+  width:60px; height:1px;
+  background:var(--hair);
+  margin-top:16px;
+}
+
+/* ---------- Подвал ---------- */
+.footer{
+  padding:32px 24px 40px;
+  text-align:center;
+}
+.foot-note{
+  font-family:'Manrope', sans-serif; font-size:12px;
+  color:var(--muted);
+}
+.logos-row{
+  display: flex;
+  align-items: center;                      
+  justify-content: space-between; 
+  gap: 40px;
+  padding: 20px 40px;
+  background: #000;
+ 
+}
+
+/* ---------- Медиа запросы ---------- */
+@media (max-width:760px){
+  .wordmark{ font-size:40px; }
+  .section-title{ font-size:21px; }
+  .track-grid{ grid-template-columns:repeat(3, 1fr); gap:24px 12px; }
+  .track-icon{ width:80px; height:60px; }
+  .poster{ width:230px; }
+  .carousel{ padding:4px 24px 24px; }
+}
